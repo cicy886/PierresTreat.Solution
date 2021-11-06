@@ -25,7 +25,7 @@ namespace PierresTreat
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<ProjectNameContext>(options => options
+        .AddDbContext<PierresTreatContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 
