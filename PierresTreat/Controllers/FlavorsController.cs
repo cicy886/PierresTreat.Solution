@@ -26,12 +26,14 @@ namespace PierresTreat.Controllers
             return View(_db.Flavors.ToList());
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult Create(Flavor flavor, int TreatId)
         {
@@ -59,6 +61,7 @@ namespace PierresTreat.Controllers
             return View(thisFlavor);
         }
 
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var thisFlavor =
@@ -67,6 +70,7 @@ namespace PierresTreat.Controllers
             return View(thisFlavor);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult Edit(Flavor flavor, int TreatId)
         {
@@ -82,6 +86,7 @@ namespace PierresTreat.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult AddTreat(int id)
         {
             var thisFlavor =
@@ -90,6 +95,7 @@ namespace PierresTreat.Controllers
             return View(thisFlavor);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult AddTreat(Flavor flavor, int TreatId)
         {
@@ -104,6 +110,7 @@ namespace PierresTreat.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult Delete(int id)
         {
             var thisFlavor =
@@ -111,6 +118,7 @@ namespace PierresTreat.Controllers
             return View(thisFlavor);
         }
 
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -121,6 +129,7 @@ namespace PierresTreat.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult DeleteEngineer(int joinId)
         {
