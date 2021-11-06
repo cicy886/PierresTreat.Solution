@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +20,7 @@ namespace PierresTreat.Controllers
             _db = db;
         }
 
+        
         public ActionResult Index()
         {
             return View(_db.Flavors.ToList());
@@ -111,7 +116,7 @@ namespace PierresTreat.Controllers
         {
             var thisFlavor =
                 _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-            _db.Flavors.Remove(thisFlavor);
+            _db.Flavors.Remove (thisFlavor);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
