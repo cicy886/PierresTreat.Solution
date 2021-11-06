@@ -42,5 +42,16 @@ namespace PierresTreat.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            var thisFlavor =
+                _db
+                    .Flavors
+                    .Include(Flavor => Flavor.JoinEntities)
+                    .ThenInclude(join => join.Treat)
+                    .FirstOrDefault(Flavor => Flavor.FlavorId == id);
+            return View(thisFlavor);
+        }
     }
 }
