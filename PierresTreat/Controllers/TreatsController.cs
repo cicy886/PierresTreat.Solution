@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PierresTreat.Models;
 
-namespace PierresTreat.Controller
+namespace PierresTreat.Controllers
 {
   public class TreatsController: Controller
   {
     private readonly PierresTreatContext _db;
 
-    public TreatsController(PierresContext db)
+    public TreatsController(PierresTreatContext db)
     {
       _db = db;
     }
