@@ -50,6 +50,7 @@ namespace PierresTreat.Controllers
             return RedirectToAction("Index");
         }
 
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var thisFlavor =
