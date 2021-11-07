@@ -1,0 +1,30 @@
+h1{
+  color: rgb(173, 29, 77);
+  padding: center;
+}
+div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  background:#333;
+  padding:8px;
+}
+body
+{
+  background-image: url("https://wallpaperaccess.com/full/740156.jpg");
+  background-repeat: no-repeat;
+  background-position: relative;
+  background-size: cover;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'El Messiri', sans-serif;
+  color: black;
+  text-shadow: 0.8px 0px rgb(255, 232, 181);
+  font-weight: bold;
+  text-align: center;
+}
