@@ -137,7 +137,7 @@ namespace PierresTreat.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult DeleteEngineer(int joinId)
+        public ActionResult DeleteTreat(int joinId)
         {
             var joinEntry =
                 _db
